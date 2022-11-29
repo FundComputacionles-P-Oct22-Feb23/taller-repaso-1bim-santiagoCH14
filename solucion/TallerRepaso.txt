@@ -1,0 +1,36 @@
+Miniespecificacion:
+1. Inicio
+2. valorCancelar, d[0-n]
+3. numeroEmpleados, i[0-n]
+4. opcion, x(2),[{A-Z},{BS},{a-z},{0-n}]
+5. nombreEmpleado, x(50),[{A-Z},{BS},{a-z}]
+6. cedulaEmpleado, d[0-n]
+7. horasMatutinas, i[0-n]
+8. horasNocturnas, i[0-n]
+9. bandera, 1  <-- true
+10. valorAdicional, d[0-n]  <-- 10
+11. serie, x(500)[{A-Z},{BS},{a-z},{0-n}] <-- ""
+12. Mientras bandera == true entonces
+13. << "Ingrese el nombre del empleado"
+14. >> nombreEmpleado
+15. << "Ingrese el numero de cedula del empleado"
+16. >> cedulaEmpleado
+17. << "Ingrese las horas trabajadas en horario matutino"
+18. >> horasMatutinas
+19. << Ingrese las horas nocturnas que se trabajan"
+20. >> horasNocturnas
+21. Si horasNocturnas >= 10 entonces 
+22.  valorAdicional <-- (horasNocturnas * valorAdicional) / 100
+23.  horasNocturnas <-- horasNocturnas + valorAdicional
+24.  valorCancelar <-- horasMatutinas + horasNocturnas
+25.  serie <-- serie + "Nomina de trabajadores" + "\n" + "Rol del trabajador de nombre " + nombreEmpleado + "y cédula " + cedulaEmpleado + "." + "\n" + "Horas matutinas trabajadas: " + horasMatutinas + "\n" + "Horas nocturnas trabaajadas: " + horasNocturnas + "Total a cancelar " + valorCancelar
+26. De lo contrario
+27.  valorCancelar <-- horasMatutinas + horasNocturna
+28.  serie <-- serie + "Nomina de trabajadores" + "\n" + "Rol del trabajador de nombre " + nombreEmpleado + "y cédula " + cedulaEmpleado + "." + "\n" + "Horas matutinas trabajadas: " + horasMatutinas + "\n" + "Horas nocturnas trabaajadas: " + horasNocturnas + "Total a cancelar " + valorCancelar
+29. Fin Si
+30. Si opcion == s entonces
+31.  bandera <-- false
+32. Fin Si
+33.Fin Mientras
+34.<< serie
+35.Fin
